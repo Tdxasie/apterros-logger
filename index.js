@@ -1,11 +1,11 @@
 const mqtt = require('mqtt')
 const fs = require('fs')
 
-const client = mqtt.connect('mqtt://192.168.1.21:1883');
+const client = mqtt.connect('mqtt://169.254.57.10:1883');
 const writeStream = fs.createWriteStream('logs/log.txt');
 
 client.on('connect', function () {
-	console.log('Connected to mqtt://192.168.1.21:1883');
+	console.log('Connected to 169.254.57.10:1883');
 	client.subscribe('test_channel');
 });
 
